@@ -27,7 +27,7 @@ remove: function(array, key) {
 		}
 	});
 	return false;
-}
+},
 sort: function(array) {
 	array.sort(this.sortFunction);
 },
@@ -39,6 +39,7 @@ sortFunction: function(a,b){
   return 0;
 }
 }
+
 
 window.addEventListener('DOMContentLoaded', function() {
 
