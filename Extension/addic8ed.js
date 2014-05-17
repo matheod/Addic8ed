@@ -5,6 +5,7 @@ bindFavorite: function()
 	if($('a[href="javascript:qsClear();"]').length)
 	{
 		this.bindFavoriteSelect();
+		this.bindFavoriteButton();
 	}
 },
 bindFavoriteSelect: function() {
@@ -38,6 +39,22 @@ showFavoriteSelect: function() {
 		document.getElementById("qsShow").dispatchEvent(changeEvent);
 	});
 	$("#qsShow").before(favoriteSelect);
+},
+bindFavoriteButton: function() {
+	$('#qsShow').on('change', function() {
+		addic8ed.showFavoriteButton();
+	});
+},
+showFavoriteButton: function() {
+	favorites = localStorage.favorites && JSON.parse(localStorage.favorites) || [];
+	showId = $("#qsSeason a").attr('href').substr('/show/'.length);
+	isFavorite = !!aArray.get(favorites, showId);
+	favoriteButton = $('<span>', {class: 'addic8ed ' + (isFavorite ? 'remove' : 'add') + 'Favorite'});
+
+	favoriteButton.click(function(){
+		
+	});
+	$("#qsSeason a").after(favoriteButton);
 }
 
 }

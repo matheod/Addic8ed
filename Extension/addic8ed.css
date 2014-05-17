@@ -1,0 +1,32 @@
+.addic8ed.addFavorite
+{
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	margin-left: 2px;
+	position: relative;
+	top: 3px;
+	background-image: url(http://cdn.addic7ed.com/img/star_boxed_empty.png);
+	cursor: pointer;
+	opacity: 0.9;
+}
+.addic8ed.addFavorite:hover
+{
+	opacity: 1;
+}
+.addic8ed.removeFavorite
+{
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	margin-left: 2px;
+	position: relative;
+	top: 3px;
+	background-image: url(http://cdn.addic7ed.com/img/star_boxed_hover.png);
+	cursor: pointer;
+	opacity: 0.9;
+}
+.addic8ed.removeFavorite:hover
+{
+	opacity: 1;
+}
