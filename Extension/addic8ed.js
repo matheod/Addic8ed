@@ -4,8 +4,40 @@ bindFavorite: function()
 {
 	if($('a[href="javascript:qsClear();"]').length)
 	{
-
+		this.bindFavoriteSelect();
 	}
+},
+bindFavoriteSelect: function() {
+	if($("#qsShow").length)
+	{
+		addic8ed.showFavoriteSelect();
+	}
+	$('a[href="javascript:qsClear();"]').on('click', function() {
+		$(this).parent().bind('DOMSubtreeModified', function(e) {
+			if($("#qsShow").length)
+			{
+				$(this).unbind(e);
+				addic8ed.showFavoriteSelect();
+			}
+		});
+	});
+},
+showFavoriteSelect: function() {
+	favorites = localStorage.favorites && JSON.parse(localStorage.favorites) || [];
+	favoriteSelect = $('<select>');
+	favoritesOptions = '<option>[Favorite]</option>';
+	favorites.forEach(function(v) {
+		favoritesOptions += '<option value="' + v[0] + '">' + v[1] + '</option>';
+	});
+	favoriteSelect.append(favoritesOptions);
+	favoriteSelect.change(function(){
+		$("#qsShow").val($(this).val());
+		// We have to manually trigger the change event
+		var changeEvent = document.createEvent("HTMLEvents");
+		changeEvent.initEvent("change", true, true);
+		document.getElementById("qsShow").dispatchEvent(changeEvent);
+	});
+	$("#qsShow").before(favoriteSelect);
 }
 
 }
