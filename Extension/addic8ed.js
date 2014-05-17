@@ -1,5 +1,13 @@
 addic8ed = {
 
+bindFavorite: function()
+{
+	if($('a[href="javascript:qsClear();"]').length)
+	{
+
+	}
+}
+
 }
 
 aArray = {
@@ -42,5 +50,7 @@ sortFunction: function(a,b){
 
 
 window.addEventListener('DOMContentLoaded', function() {
+
+	addic8ed.bindFavorite();
 
 }, false);
