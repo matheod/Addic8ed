@@ -24,9 +24,9 @@ bindFavoriteSelect: function() {
 	});
 },
 showFavoriteSelect: function() {
-	favorites = localStorage.favorites && JSON.parse(localStorage.favorites) || [];
-	favoriteSelect = $('<select>');
-	favoritesOptions = '<option>[Favorite]</option>';
+	var favorites = localStorage.favorites && JSON.parse(localStorage.favorites) || [];
+	var favoriteSelect = $('<select>');
+	var favoritesOptions = '<option>[Favorite]</option>';
 	favorites.forEach(function(v) {
 		favoritesOptions += '<option value="' + v[0] + '">' + v[1] + '</option>';
 	});
@@ -46,10 +46,10 @@ bindFavoriteButton: function() {
 	});
 },
 showFavoriteButton: function() {
-	favorites = localStorage.favorites && JSON.parse(localStorage.favorites) || [];
-	showId = $("#qsSeason a").attr('href').substr('/show/'.length);
-	isFavorite = !!aArray.get(favorites, showId);
-	favoriteButton = $('<span>', {class: 'addic8ed ' + (isFavorite ? 'remove' : 'add') + 'Favorite'});
+	var favorites = localStorage.favorites && JSON.parse(localStorage.favorites) || [];
+	var showId = $("#qsSeason a").attr('href').substr('/show/'.length);
+	var isFavorite = !!aArray.get(favorites, showId);
+	var favoriteButton = $('<span>', {class: 'addic8ed ' + (isFavorite ? 'remove' : 'add') + 'Favorite'});
 
 	favoriteButton.click(function(){
 		
